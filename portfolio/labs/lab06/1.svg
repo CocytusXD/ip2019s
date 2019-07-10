@@ -42,7 +42,7 @@
   </circle>
 
 <circle fill="lightblue" stroke="yellow" cx="186" cy="191" r="16" opacity="0.2">
-    <animate attributeName="opacity" to="1" begin=16s" dur="4s" />
+    <animate attributeName="opacity" to="1" begin="16s" dur="4s" />
   </circle>
 
 <circle fill="yellow" stroke="lightblue" cx="206" cy="114" r="16" opacity="0.2">
