@@ -132,7 +132,6 @@ function analyze() {
       subs = subs.slice(m+1, n);  // C 也要移除 (大寫C), z 也要移除 
       console.log('subs = ' + subs);
 
-
       temp = subs.trim().split(/\s+/);
 
       /*
@@ -140,12 +139,26 @@ function analyze() {
         newPath.push(element);
       });
       */
-      newPath.push([temp[0],temp[1]]);
-      console.log('newPath = ' + newPath);
 
-      //var newPath = Snap.path.toCubic(subs);
 
-      console.log(' newPath.length = ' + newPath.length);
+      function start(e){
+      	$(document).mousemove(function(event){
+      		var p = $( "#svgimage2" );
+
+      		var position = p.position();
+
+      		console.log('position = ' + position.left + ', ' + position.top);
+
+      		var myX = event.pageX - Math.round(position.left);
+      		var myY = event.pageY - Math.round(position.top) + 500;
+
+      		$("#s5").html("<div style='position:absolute; border-style:none; TOP:"
+      			+ event.pageY + "px; LEFT:"
+      			+ event.pageX + "px; '>" + "&nbsp&nbsp&nbsp&nbsp("
+      			+ myX + ", "
+      			+ myY + ")"
+      			+ "</div>");
+
 
       /*
       //for(var i = 0; i < newPath.length; i++){
@@ -158,7 +171,7 @@ function analyze() {
       }
 
       */
-    } while (m > 0);
+    }while (m > 0);
 }
 
 function saveText(text, filename) {
